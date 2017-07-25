@@ -3,11 +3,11 @@
     <h1>TV/Movie Guide</h1>
     <p>Powered by TMDb</p>
     <nav>
-      <ul class="list-unstyled list-inline">
-        <li class="hidden-sm-up">
+      <ul class="list-inline">
+        <li class="hidden-sm-up list-inline-item">
           <button class="btn btn-primary" (click)="navHidden = !navHidden"><i class="fa fa-bars"></i></button>
         </li>
-        <li *ngFor="let items of sections" [ngClass]="{'hidden-sm-down': !navHidden}">
+        <li *ngFor="let items of sections" class="list-inline-item hidden-sm-down" [ngClass]="{'hidden-sm-down': !navHidden}">
           <button class="btn btn-primary" (click)="getData(items.section, items.searchTerm, 1); pageNumber = 1"><span>{{items.name}}</span> <i class="fa {{items.icon}}"></i></button>
         </li>
       </ul>
@@ -15,7 +15,7 @@
   </header>
   <section class="filmTvGuide__listings container-fluid">
     <ul class="list-unstyled row" *ngIf="!isLoading">
-      <li *ngFor="let items of feedData" class="col-md-3 col-sm-4 col-xs-6">
+      <li *ngFor="let items of feedData" class="col-md-3 col-sm-4">
         <img src="//image.tmdb.org/t/p/w500{{items.poster_path}}" class="img-fluid" title="{{items.title}}" />
         <div id="{{items.id}}" class="filmTvGuide__listings--nav">
           <a title="More Info" class="infoBtn" (click)="getDetails(items.id)"><i class="fa fa-info-circle"></i></a>

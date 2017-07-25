@@ -5,10 +5,12 @@ app-film-tv-guide {
     }
 
     header nav {
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
-      .nav-item {
+      .list-inline-item {
         margin-right: 5px;
+        margin-bottom: 7px;
+        display: inline-block;
       }
     }
   }
