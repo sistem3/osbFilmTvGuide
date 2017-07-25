@@ -59,6 +59,7 @@ export class FilmTvGuideComponent implements OnInit {
   }
 
   getData(section, searchTerm, pageNumber) {
+    this.section = section;
     this.filmTvGuideService.getData(section, searchTerm, pageNumber).subscribe(
       listings => this.setData(listings),
       error => this.handleError(error)
