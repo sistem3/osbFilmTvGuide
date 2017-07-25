@@ -1,0 +1,55 @@
+<main class="filmTvGuide">
+  <header class="container">
+    <h1>TV/Movie Guide</h1>
+    <p>Powered by TMDb</p>
+    <nav>
+      <ul class="list-unstyled list-inline">
+        <li class="hidden-sm-up">
+          <button class="btn btn-primary" (click)="navHidden = !navHidden"><i class="fa fa-bars"></i></button>
+        </li>
+        <li *ngFor="let items of sections" [ngClass]="{'hidden-sm-down': !navHidden}">
+          <button class="btn btn-primary" (click)="getData(items.section, items.searchTerm, 1); pageNumber = 1"><span>{{items.name}}</span> <i class="fa {{items.icon}}"></i></button>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="filmTvGuide__listings container-fluid">
+    <ul class="list-unstyled row" *ngIf="!isLoading">
+      <li *ngFor="let items of feedData" class="col-md-3 col-sm-4 col-xs-6">
+        <img src="//image.tmdb.org/t/p/w500{{items.poster_path}}" class="img-fluid" title="{{items.title}}" />
+        <div id="{{items.id}}" class="filmTvGuide__listings--nav">
+          <a title="More Info" class="infoBtn" (click)="getDetails(items.id)"><i class="fa fa-info-circle"></i></a>
+          <a title="Add to Watched" class="watchedBtn" (click)="addWatched(items.id)"><i class="fa fa-eye"></i></a>
+          <a title="Add to Favourite" class="favouriteBtn" (click)="addFavourite(items.id)"><i class="fa fa-heart"></i></a>
+        </div>
+      </li>
+    </ul>
+    <div id="filmLoader">
+      <div>
+        <i class="fa fa-spinner fa-spin"></i>
+        <p>Loading...</p>
+      </div>
+    </div>
+  </section>
+  <section class="filmTvGuide__modal" *ngIf="modalShowing">
+    <img src="//image.tmdb.org/t/p/w1000{{modalData.backdrop_path}}" title="{{modalData.title}}" />
+    <div class="filmTvGuide__modal--content container rounded">
+      <div class="filmTvGuide__modal--closeBtn" (click)="closeModal()"><i class="fa fa-close"></i></div>
+      <div class="row">
+        <div class="col-md-8">
+          <h1 *ngIf="modalData.title">{{modalData.title}}</h1>
+          <h1 *ngIf="modalData.name">{{modalData.name}}</h1>
+          <h4>{{modalData.tagline}}</h4>
+          <p>{{modalData.overview}}</p>
+          <p *ngIf="modalData.status"><strong>Status</strong>: <span>{{modalData.status}}</span></p>
+          <p *ngIf="modalData.release_date"><strong>Released</strong>: <span>{{modalData.release_date}}</span></p>
+          <p *ngIf="modalData.number_of_seasons"><strong>Number of Seasons</strong>: <span>{{modalData.number_of_seasons}}</span></p>
+          <p *ngIf="modalData.number_of_episodes"><strong>Number of Episodes</strong>: <span>{{modalData.number_of_episodes}}</span></p>
+        </div>
+        <div class="col-md-4">
+          <img src="//image.tmdb.org/t/p/w500{{modalData.poster_path}}" class="img-fluid" title="{{modalData.title}}" />
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

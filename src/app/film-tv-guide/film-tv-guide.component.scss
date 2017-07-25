@@ -1,0 +1,103 @@
+app-film-tv-guide {
+  .filmTvGuide {
+    header h1 {
+      margin-top: 20px;
+    }
+
+    header nav {
+      margin-bottom: 20px;
+
+      .nav-item {
+        margin-right: 5px;
+      }
+    }
+  }
+
+  .filmTvGuide__listings {
+    .favouriteBtn:hover {
+      color: $purple-pizzazz;
+
+      > i {
+        color: $purple-pizzazz;
+      }
+    }
+
+    .favouriteActive {
+      color: $purple-pizzazz;
+
+      > i {
+        color: $purple-pizzazz;
+      }
+    }
+
+    .watchedBtn:hover {
+      color: $cerulean;
+
+      > i {
+        color: $cerulean;
+      }
+    }
+
+    .watchedActive {
+      color: $cerulean;
+
+      > i {
+        color: $cerulean;
+      }
+    }
+
+    .infoBtn:hover {
+      color: #3B62FF;
+    }
+
+    li {
+      padding-left: 0;
+      padding-right: 0;
+
+      &:hover {
+        .filmTvGuide__listings--nav {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .filmTvGuide__listings--nav {
+    width: 100%;
+    min-height: 60px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    margin-left: -50%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    -webkit-transition: opacity 0.5s;
+    transition: opacity 0.5s;
+
+    > a, a:not([href]) {
+      font-size: 30px;
+      color: $color-white;
+      position: relative;
+      top: 10px;
+      margin-right: 10px;
+      float: right;
+    }
+  }
+
+  #filmLoader {
+    width: 100%;
+    min-height: 90px;
+    display: block;
+    position: relative;
+
+    div {
+      width: 70px;
+      text-align: center;
+      margin: 0 auto;
+
+      i {
+        font-size: 30px;
+      }
+    }
+  }
+}

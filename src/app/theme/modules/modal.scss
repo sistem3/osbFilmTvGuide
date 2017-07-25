@@ -1,0 +1,49 @@
+app-film-tv-guide {
+  .filmTvGuide__modal {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: $color-black;
+    overflow-y: scroll;
+
+    &--closeBtn {
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      top: -15px;
+      right: -15px;
+      background: $color-black;
+      border-radius: 50%;
+      border: 3px solid $color-white;
+      z-index: 2;
+
+      > i {
+        font-size: 21px;
+        color: $color-white;
+        position: relative;
+        left: 4px;
+        top: 1px;
+      }
+    }
+
+    > img {
+      width: 100%;
+      height: auto;
+      opacity: 0.4;
+    }
+
+    &--content {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      margin-left: -45%;
+      background: $color-white;
+      color: $color-black;
+      padding-bottom: 20px;
+      padding-top: 20px;
+      z-index: 1;
+    }
+  }
+}
