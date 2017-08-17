@@ -19,7 +19,7 @@ export class FilmTvGuideComponent implements OnInit {
   pageNumber = 1;
   feedData = [];
   modalData: any;
-  navHidden = true;
+  navHidden = false;
   user = {
     favourites: [],
     watched: []
@@ -35,7 +35,8 @@ export class FilmTvGuideComponent implements OnInit {
       {name: 'Upcoming Movies', section: 'movie', searchTerm: 'upcoming', icon: 'fa-film'},
       {name: 'Top Rated Movies', section: 'movie', searchTerm: 'top_rated', icon: 'fa-film'},
       {name: 'Popular TV Shows', section: 'tv', searchTerm: 'popular', icon: 'fa-desktop'},
-      {name: 'Top Rated TV Shows', section: 'tv', searchTerm: 'top_rated', icon: 'fa-desktop'}
+      {name: 'Top Rated TV Shows', section: 'tv', searchTerm: 'top_rated', icon: 'fa-desktop'},
+      /*{name: 'Popular People', section: 'person', searchTerm: 'popular', icon: 'fa-user'}*/
     ];
   }
 

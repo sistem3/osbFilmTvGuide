@@ -1,14 +1,14 @@
 <main class="filmTvGuide">
   <header class="container">
     <h1>TV/Movie Guide</h1>
-    <p>Powered by TMDb</p>
+    <p><em>Powered by TMDb</em></p>
     <nav>
       <ul class="list-inline">
-        <li class="hidden-sm-up list-inline-item">
+        <li class="list-inline-item">
           <button class="btn btn-primary" (click)="navHidden = !navHidden"><i class="fa fa-bars"></i></button>
         </li>
-        <li *ngFor="let items of sections" class="list-inline-item hidden-sm-down" [ngClass]="{'hidden-sm-down': !navHidden}">
-          <button class="btn btn-primary" (click)="getData(items.section, items.searchTerm, 1); pageNumber = 1"><span>{{items.name}}</span> <i class="fa {{items.icon}}"></i></button>
+        <li *ngFor="let items of sections" class="list-inline-item">
+          <button class="btn btn-primary" (click)="getData(items.section, items.searchTerm, 1); pageNumber = 1" *ngIf="navHidden"><span>{{items.name}}</span> <i class="fa {{items.icon}}"></i></button>
         </li>
       </ul>
     </nav>
