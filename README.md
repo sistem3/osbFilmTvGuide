@@ -1,6 +1,18 @@
-# OsbFilmTvGuide
+# osbFilmTvGuide
+[Angular JS](https://angular.io/) Application designed to display upcoming/popular Movie and TV show information (powered by [TMDB](https://www.themoviedb.org)), allowing the user to find out about new and popular films and TV shows as well as adding them to their favourites and watched list.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.3.0-beta.0.
+
+## Version: 0.0.1
+## Demo: [Click Here](https://osbfilmtvguide.firebaseapp.com/)
+
+## Dependencies:
+* [Angular 4](https://angular.io/)
+* [Bootstrap 4](http://getbootstrap.com)
+* [Font Awesome](http://fontawesome.io)
+* [ScrollMagic](http://scrollmagic.io/)
+
+_Please note this project is still in an experimental phase_
 
 ## Development server
 
